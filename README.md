@@ -1,36 +1,61 @@
 # Seven Segment Display Project
-Link to Wokwi Project: [Seven Segment Display](https://wokwi.com/projects/451813217808899073)
+Link to Wokwi Project: [Seven Segment Display](https://wokwi.com/projects/451813217808899073)  
+Link to Truth Table and Karnaugh Maps: [Truth Table and Karnaugh Maps](https://docs.google.com/spreadsheets/d/1AqnicXIaCNh9g1GLAmd-MoX33K1gKoY7P84J6AuhUTM/edit?gid=0#gid=0)
 
-## What is Tiny Tapeout?
+### **Objective**
+I designed a simple sprinkler (hence the name) using combinational logic. The system evaluates environmental conditions and operational constraints to determine whether the sprinkler system should be enabled, while independently indicating whether sufficient water supply is available. 
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+### **Logic**
+For the sprinkler to actually function, two conditions must be met
+* The sprinkler system must be enabled
+* There has to be a sufficient water supply
 
-To learn more and get started, visit https://tinytapeout.com.
+In order to enable the sprinkler the following conditions have to be met
+* It can't be raining
+* The soil can't be moist
+* Water supply doesn't matter
+* Watering time doesn't matter as long as there is water supply
 
-## Wokwi Projects
+In order for there to be a sufficient water supply the input must read true
+<br><br><br>
+(Image/s)
+<br><br>
+### **Input Variables:**
+  
+  Input (1)
 
-Edit the [info.yaml](info.yaml) and change the `wokwi_id` to the ID of your Wokwi project. You can find the ID in the URL of your project, it's the big number after `wokwi.com/projects/`.
+  
 
-The GitHub action will automatically fetch the digital netlist from Wokwi and build the ASIC files.
+  Input (2)
 
-## Enable GitHub actions to build the results page
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
 
-## Resources
+ Input (3)
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
 
-## What next?
 
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
-  - Bluesky [@tinytapeout.com](https://bsky.app/profile/tinytapeout.com)
+ Input (4)
+
+ 
+
+### **Output Variables:**
+
+  Output (1)
+
+
+  Output (2)
+
+
+  Output (3)
+
+
+  Output (4)
+
+
+  Output (5)
+
+
+  Output (6)
+
+
+  Output (7)
