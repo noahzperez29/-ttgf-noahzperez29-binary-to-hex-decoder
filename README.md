@@ -16,3 +16,6 @@ The system produces seven binary outputs, each corresponding to a specific LED
 segment. A segment is illuminated when its output is logic high (1) and dimmed 
 when its output is logic low (0). Combinations of inputs are defined in the 
 truth table.
+<br><br>
+![sevensegmentdisplayformat
+](./images/seven_segment_display_format.png)
