@@ -35,7 +35,7 @@ TRUTH_TABLE = {
 async def test_project(dut):
     dut._log.info("Start")
 
-    # No clock needed (combinational), but cocotb needs one
+   
     clock = Clock(dut.clk, 10, unit="us")
     cocotb.start_soon(clock.start())
 
@@ -50,16 +50,14 @@ async def test_project(dut):
     dut._log.info("Testing Binary to Hex Decoder - all 15 valid inputs")
 
     for (A, B, C, D), (sA, sB, sC, sD, sE, sF, sG, char) in TRUTH_TABLE.items():
-        # Pack input: ui_in[3]=A, ui_in[2]=B, ui_in[1]=C, ui_in[0]=D
+        
         ui_val = (A << 3) | (B << 2) | (C << 1) | D
         dut.ui_in.value = ui_val
         await ClockCycles(dut.clk, 1)
 
         dut._log.info(f"Test '{char}': input ABCD={A}{B}{C}{D} (0b{ui_val:04b})")
 
-        # uo_out[0]=segA, [1]=segB, [2]=segC, [3]=segD, [4]=segE, [5]=segF, [6]=segG
-        # Note: cocotb bit indexing is MSB-first so uo_out.value[0] = bit 7,
-        # use integer comparison instead for clarity
+      
         out = int(dut.uo_out.value)
 
         got_A = (out >> 0) & 1
@@ -80,11 +78,11 @@ async def test_project(dut):
 
         dut._log.info(f"  '{char}' PASS: segments ABCDEFG = {got_A}{got_B}{got_C}{got_D}{got_E}{got_F}{got_G}")
 
-    # Test input 0 (0000) - not defined in truth table, just verify no crash
+   
     dut._log.info("Test 0000 input (undefined, just checking no X/Z on outputs)")
     dut.ui_in.value = 0b00000000
     await ClockCycles(dut.clk, 1)
-    # No assertion on value, just log what comes out
+    
     dut._log.info(f"  0000 output: 0b{int(dut.uo_out.value):08b}")
 
     dut._log.info("All tests passed!")
